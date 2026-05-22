@@ -40,21 +40,26 @@ The system actively monitors localized weather conditions and indoor/outdoor air
 
 ## 📁 Monorepo Structure
 
-This repository is organized into three distinct environments:
+This repository follows a monorepo architecture, containing the hardware firmware, web dashboard, and mobile application in their respective directories:
 
 ```text
-SkyCast-Ecosystem/
+SKYCAST-ECOSYSTEM/
+ ├── .github/                           # GitHub Actions / Workflows
  ├── esp32-firmware/                    # C++ source code for the microcontroller
- │    ├── main.ino                      # Primary sensor logic and Firebase loops
+ │    ├── main.cpp                      # Primary sensor logic and Firebase loops
  │    └── secrets.h                     # (Ignored) Wi-Fi and Firebase credentials
  │
  ├── skycast-dashboard(Web-Dashboard)/  # React.js frontend powered by Vite
- │    ├── src/
- │    │   ├── components/               # UI, Charts, and Analytics grid
- │    │   ├── hooks/                    # Custom hooks (Theme, Sensor Data, Charts)
- │    │   └── services/                 # Firebase config and Export services
- │    └── .env                          # (Ignored) Gemini API and Firebase keys
+ │    ├── public/                       # Static assets
+ │    ├── src/                          # React components, hooks, and services
+ │    ├── .env                          # (Ignored) Gemini API and Firebase keys
+ │    ├── firebase.json                 # Firebase hosting configuration
+ │    ├── package.json                  # Node dependencies
+ │    └── vite.config.js                # Vite configuration
  │
  └── SkyCast(Android-App)/              # Native mobile application
-      ├── app/src/main/                 # Android layouts and Kotlin/Java logic
-      └── google-services.json          # (Ignored) Firebase linkage file
+      ├── app/                          # Android source code and layouts
+      ├── gradle/                       # Gradle wrapper files
+      ├── build.gradle.kts              # Project build configuration
+      ├── local.properties              # (Ignored) SDK path and local config
+      └── settings.gradle.kts           # Gradle settings
