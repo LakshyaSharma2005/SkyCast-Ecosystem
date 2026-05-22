@@ -223,39 +223,53 @@ This helps identify differences between:
 
 ## 🗂️ Monorepo Structure
 
-    SkyCast-Ecosystem/
-    │
-    ├── SkyCast(Android-App)/
-    │   ├── app/
-    │   ├── gradle/
-    │   ├── build.gradle
-    │   ├── settings.gradle
-    │   └── google-services.json
-    │
-    ├── esp32-firmware/
-    │   ├── main.cpp
-    │   ├── secrets.h
-    │   └── README.md
-    │
-    ├── skycast-dashboard(Web-Dashboard)/
-    │   ├── public/
-    │   ├── src/
-    │   │   ├── components/
-    │   │   ├── hooks/
-    │   │   │   ├── useTheme.js
-    │   │   │   ├── useCharts.js
-    │   │   │   └── useSensorData.js
-    │   │   ├── firebase/
-    │   │   ├── styles/
-    │   │   ├── App.jsx
-    │   │   └── main.jsx
-    │   ├── package.json
-    │   ├── vite.config.js
-    │   └── .env
-    │
-    ├── README.md
-    └── .gitignore
+The project is organized as a single monorepo containing three major parts:
 
+1. **ESP32 Firmware**
+2. **React Web Dashboard**
+3. **Native Android App**
+
+```text
+SKYCAST-ECOSYSTEM/
+│
+├── .github/
+│
+├── esp32-firmware/
+│   ├── main.cpp
+│   └── secrets.h
+│
+├── skycast-dashboard(Web-Dashboard)/
+│   ├── .firebase/
+│   ├── dist/
+│   ├── node_modules/
+│   ├── public/
+│   ├── src/
+│   ├── .env
+│   ├── .firebaserc
+│   ├── .gitignore
+│   ├── eslint.config.js
+│   ├── firebase.json
+│   ├── index.html
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── README.md
+│   └── vite.config.js
+│
+├── SkyCast(Android-App)/
+│   ├── .gradle/
+│   ├── .idea/
+│   ├── app/
+│   ├── build/
+│   ├── gradle/
+│   ├── .gitignore
+│   ├── build.gradle.kts
+│   ├── gradle.properties
+│   ├── gradlew
+│   ├── gradlew.bat
+│   ├── local.properties
+│   └── settings.gradle.kts
+│
+└── README.md
 ---
 
 ## 🛠️ Tech Stack
