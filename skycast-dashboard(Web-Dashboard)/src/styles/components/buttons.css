@@ -1,0 +1,54 @@
+.btn {
+  font-family: var(--font); font-size: 12px; font-weight: 600; padding: 9px 16px; border-radius: 8px; cursor: pointer;
+  border: 1px solid var(--border2); background: var(--surface); color: var(--text); letter-spacing: 0.3px; transition: all 0.2s;
+}
+
+.btn:hover { background: var(--surface2); border-color: rgba(99, 179, 237, 0.4); }
+
+.btn.accent { background: rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.5); color: var(--cyan); }
+.btn.accent:hover { background: rgba(56, 189, 248, 0.25); box-shadow: 0 0 16px rgba(56, 189, 248, 0.2); }
+
+.btn.danger { color: var(--red); border-color: rgba(248, 113, 113, 0.3); }
+.btn.danger:hover { background: var(--red-dim); }
+
+.btn.csv { background: #16a34a; color: #fff; border-color: rgba(22, 163, 74, 0.7); box-shadow: 0 0 10px rgba(22, 163, 74, 0.3); }
+.btn.csv:hover { background: #15803d; box-shadow: 0 0 25px rgba(22, 163, 74, 0.6); border-color: #16a34a; }
+
+.btn.pdf { background: #dc2626; color: #fff; border-color: rgba(220, 38, 38, 0.7); box-shadow: 0 0 10px rgba(220, 38, 38, 0.3); }
+.btn.pdf:hover { background: #b91c1c; box-shadow: 0 0 25px rgba(220, 38, 38, 0.6); border-color: #dc2626; }
+
+/* =========================================
+   ⚡ GOOGLE SHEETS BUTTON
+========================================= */
+.btn.sheets { 
+  background: #0f9d58; /* Official Google Sheets Green */
+  color: #fff; 
+  border-color: rgba(15, 157, 88, 0.7); 
+  box-shadow: 0 0 10px rgba(15, 157, 88, 0.3); 
+}
+
+.btn.sheets:hover { 
+  background: #0b8043; 
+  box-shadow: 0 0 25px rgba(15, 157, 88, 0.6); 
+  border-color: #0f9d58; 
+}
+/* =========================================
+   🌓 THEME TOGGLE BUTTON
+========================================= */
+.btn.theme-btn {
+  background: #0f172a; /* ⚡ FIX: Solid Slate-900, no transparency */
+  color: #ffffff !important; /* ⚡ FIX: Forces text & emoji to be bright white */
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Slightly sharper border */
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn.theme-btn:hover {
+  background: #1e293b; /* Solid lighter slate on hover */
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px); 
+  box-shadow: 0 8px 15px -5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.btn.theme-btn:active {
+  transform: translateY(0); 
+}

@@ -1,0 +1,126 @@
+/* ==========================================================================
+   📱 ULTRA-RESPONSIVE BREAKPOINTS (SkyCast Dashboard)
+   ========================================================================== */
+
+/* ─── 1. SMALL LAPTOPS & TABLETS LANDSCAPE (Max 1200px) ─── */
+@media (max-width: 1200px) {
+  /* Safely collapse down to 2 columns */
+  .grid, 
+  .grid-2 { 
+    grid-template-columns: repeat(2, 1fr) !important; 
+  }
+}
+
+/* ─── 2. TABLETS PORTRAIT & LARGE MOBILE (Max 900px) ─── */
+@media (max-width: 900px) {
+  /* Force a single column layout for all grids */
+  .grid, 
+  .grid-2, 
+  .grid-charts { 
+    grid-template-columns: 1fr !important; 
+    gap: 16px !important; /* Tighter gap between stacked cards */
+  }
+
+  /* Start scaling down massive text */
+  .stat-val { font-size: 38px; }
+}
+
+/* ─── 3. STANDARD MOBILE PHONES (Max 768px) ─── */
+@media (max-width: 768px) {
+  /* Tighten card padding to save precious horizontal screen space */
+  .stat-card,
+  .analytics-card,
+  .chart-card,
+  .log-card {
+    padding: 16px !important; 
+  }
+
+  /* ⚡ Deep Typography Scaling */
+  .brand-text h1 { font-size: 16px !important; line-height: 1.2; } /* Smaller to save header space */
+  .stat-val { font-size: 32px !important; }
+  .stat-unit { font-size: 16px !important; }
+  .section-title { margin: 32px 0 16px 0 !important; font-size: 11px; }
+
+  /* ⚡ PREMIUM MOBILE HEADER (Horizontal Scroll) */
+  .controls-row,
+  .header-actions {
+    display: flex;
+    flex-wrap: nowrap !important; /* Force all buttons onto a single line */
+    justify-content: flex-start;
+    overflow-x: auto; /* Enable horizontal swiping */
+    gap: 8px;
+    padding-bottom: 4px; /* Slight padding so box-shadows aren't cut off */
+    -webkit-overflow-scrolling: touch; /* Buttery smooth momentum scrolling on iOS */
+    scrollbar-width: none; /* Hides scrollbar on Firefox */
+  }
+
+  /* Hides the ugly scrollbar on Chrome/Safari/Edge */
+  .controls-row::-webkit-scrollbar,
+  .header-actions::-webkit-scrollbar {
+    display: none;
+  }
+
+  .header-actions .btn,
+  .controls-row .btn {
+    flex: 0 0 auto !important; /* Lock the buttons so they don't stretch or squash */
+    padding: 7px 14px; /* Slightly more compact padding */
+    font-size: 11px;
+    white-space: nowrap; /* Ensure text never breaks to a second line */
+  }
+
+  /* ⚡ FIX: Keep section-title buttons small and compact (e.g., Refresh button) */
+  .section-title .btn {
+    flex: 0 0 auto !important; /* Prevents stretching */
+    padding: 6px 12px;         /* Slightly smaller for mobile */
+    font-size: 10px;           /* Scales down the text */
+  }
+
+  /* ⚡ The Footer Breakdown */
+  /* Overrides the desktop "flex: 1" centering so the footer stacks cleanly */
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 16px !important;
+    gap: 16px !important;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    flex: none !important; /* Release the equal-width lock */
+    width: 100%;
+    justify-content: center !important; 
+    text-align: center;
+  }
+
+  .footer-right {
+    flex-direction: column; /* Stack the badges and timestamps on top of each other */
+    gap: 8px;
+  }
+}
+
+/* ─── 4. SMALL MOBILE PHONES (Max 480px) ─── */
+@media (max-width: 480px) {
+  /* Squeeze the charts so they don't force vertical scrolling too much */
+  .chart-wrap {
+    height: 120px !important; 
+  }
+
+  /* Ensure the AQI gauge fits nicely */
+  .aqi-gauge-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Prevent badges from overflowing edge of screen */
+  .stat-sub {
+    font-size: 11px;
+    flex-wrap: wrap; 
+  }
+
+  /* Shrink the terminal log window */
+  .log-box {
+    height: 120px; 
+    font-size: 11px;
+  }
+}

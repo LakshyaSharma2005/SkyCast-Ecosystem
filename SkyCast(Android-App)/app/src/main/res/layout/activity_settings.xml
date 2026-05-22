@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#060a12"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tvSettingsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:textColor="#38bdf8"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/tvAqiSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AQI ALERT THRESHOLD"
+        android:textColor="#64748b"
+        android:textSize="12sp"
+        android:letterSpacing="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSettingsTitle"
+        android:layout_marginTop="40dp" />
+
+    <TextView
+        android:id="@+id/tvAqiValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alert at AQI: 150"
+        android:textColor="#ffffff"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAqiSubtitle"
+        android:layout_marginTop="8dp" />
+
+    <SeekBar
+        android:id="@+id/seekAqiThreshold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:max="250"
+        android:progress="100"
+        android:progressTint="#38bdf8"
+        android:thumbTint="#38bdf8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAqiValue"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/tvAqiRange"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="50 (Good)  ⟷  300 (Hazardous)"
+        android:textColor="#64748b"
+        android:textSize="12sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seekAqiThreshold"
+        android:layout_marginTop="8dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

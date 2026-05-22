@@ -1,0 +1,48 @@
+:root {
+  --bg: #060a12;
+  --surface: #0d1525;
+  --surface2: #111d30;
+  --border: rgba(99, 179, 237, 0.12);
+  --border2: rgba(99, 179, 237, 0.22);
+  --text: #e8edf5;
+  --muted: #5a7498;
+  --cyan: #38bdf8;
+  --cyan-dim: rgba(56, 189, 248, 0.15);
+  --green: #34d399;
+  --green-dim: rgba(52, 211, 153, 0.15);
+  --amber: #fbbf24;
+  --amber-dim: rgba(251, 191, 36, 0.15);
+  --pink: #f472b6;
+  --pink-dim: rgba(244, 114, 182, 0.15);
+  --red: #f87171;
+  --red-dim: rgba(248, 113, 113, 0.15);
+  --blue: #3b82f6;
+  --blue-dim: rgba(59, 130, 246, 0.15);
+  --font: 'Space Grotesk', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#particle-canvas {
+  display: none !important;
+}
+

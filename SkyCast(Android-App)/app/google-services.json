@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "653625979173",
+    "firebase_url": "https://skycast-a5bd0-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "skycast-a5bd0",
+    "storage_bucket": "skycast-a5bd0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653625979173:android:2068ace1a7e0bf5723eacc",
+        "android_client_info": {
+          "package_name": "com.example.skycast"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBneGQd3-jEtJONUgajERtGiY5XIu38I7s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

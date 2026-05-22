@@ -1,0 +1,174 @@
+/* ==========================================================================
+   8. FOOTER (Balanced Glass Architecture)
+   ========================================================================== */
+.footer {
+  margin-top: 48px;
+  padding: 16px 24px;
+  background: var(--card-bg);
+  backdrop-filter: blur(20px) saturate(130%);
+  -webkit-backdrop-filter: blur(20px) saturate(130%);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Center the middle element */
+  flex-wrap: nowrap;
+  /* Keep it on one line for desktop */
+  gap: 16px;
+  font-size: 12px;
+  color: var(--theme-muted);
+  font-family: var(--mono);
+  position: relative;
+  z-index: 10;
+  cursor: default;
+  /* Prevents text-selector cursor on empty glass areas */
+
+  /* Smooth transitions for all theme changes and hovers */
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s ease,
+    background 1.5s ease-in-out !important;
+}
+
+/* ─── ⚡ THE SECRET TO PERFECT CENTERING ⚡ ─── */
+
+.footer-left {
+  flex: 1;
+  /* Occupies 1/3 of the width */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* Pins content to the far left */
+  gap: 12px;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.footer-center {
+  flex: 0 0 auto;
+  /* Takes only exactly as much space as the text needs */
+  text-align: center;
+  font-family: var(--font);
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+
+.footer-right {
+  flex: 1;
+  /* Occupies exactly the same 1/3 width as the left side */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* Pins content to the far right */
+  gap: 12px;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+/* ─── Existing Elements ─── */
+
+.separator {
+  color: #38bdf8;
+  opacity: 0.6;
+}
+
+.footer-center .highlight {
+  color: #ffffff;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  margin-left: 4px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.footer-center .highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #38bdf8;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.footer-center:hover .highlight::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* =========================================
+   ⚡ LATENCY & BADGES
+   ========================================= */
+.latency-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.latency-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.logs-badge {
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  backdrop-filter: blur(6px);
+  border: 1px solid transparent;
+}
+
+.logs-badge.live {
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.12);
+  border-color: rgba(52, 211, 153, 0.25);
+  box-shadow: 0 0 10px rgba(52, 211, 153, 0.25);
+}
+
+.logs-badge.offline {
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.12);
+  border-color: rgba(248, 113, 113, 0.25);
+  box-shadow: 0 0 10px rgba(248, 113, 113, 0.25);
+}
+
+/* Day Mode Overrides */
+.theme-day .logs-badge.live {
+  color: #065f46;
+  background: rgba(16, 185, 129, 0.25);
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: none;
+}
+
+.theme-day .logs-badge.offline {
+  color: #7f1d1d;
+  background: rgba(239, 68, 68, 0.25);
+  border-color: rgba(239, 68, 68, 0.4);
+  box-shadow: none;
+}
+
+/* =========================================
+   ✨ HOVER EFFECTS
+   ========================================= */
+.footer:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  box-shadow:
+    0 20px 40px -12px var(--hover-shadow),
+    0 0 20px -5px rgba(255, 255, 255, 0.15) !important;
+}

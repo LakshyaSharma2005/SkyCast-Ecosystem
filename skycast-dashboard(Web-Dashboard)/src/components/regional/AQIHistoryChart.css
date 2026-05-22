@@ -1,0 +1,114 @@
+.analytics-dashboard-container {
+  /* Match the outer container style */
+  background: #1f2937; /* or your project's equivalent surface color */
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 900px;
+  margin: 20px auto;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  font-family: inherit;
+  color: #f3f4f6;
+}
+
+.analytics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.dashboard-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.stats-strip {
+  display: flex;
+  gap: 24px;
+}
+
+.stat-item {
+  text-align: right;
+}
+
+.stat-item > span {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #9ca3af;
+  display: block;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.stat-item > div {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.value-label.unhealthy {
+  color: #f87171;
+}
+
+.value-label.good {
+  color: #4ade80;
+}
+
+.value-label span {
+  font-weight: 400;
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+.chart-wrapper {
+  height: 350px; /* Crucial: Chart must have a set height for Apex to function */
+  margin-bottom: 24px;
+}
+
+.analytics-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #374151;
+  padding-top: 16px;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #d1d5db;
+}
+
+.view-selector {
+  background: #111827; /* or your project's equivalent background color */
+  color: #f3f4f6;
+  border: 1px solid #374151;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-family: inherit;
+  appearance: none; /* See Step 5 from previous discussion */
+  padding-right: 30px; /* Space for the dropdown arrow */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239ca3af'%3%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+}
+
+.refresh-btn {
+  background: rgba(255, 255, 255, 0.05);
+  color: #f3f4f6;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.refresh-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}

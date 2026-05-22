@@ -1,0 +1,141 @@
+.theme-night {
+  --card-bg: rgba(10, 15, 30, 0.6);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --theme-muted: #94a3b8;
+  --hover-shadow: rgba(0, 0, 0, 0.8);
+}
+
+.theme-morning {
+  --card-bg: rgba(67, 20, 7, 0.25);
+  --card-border: rgba(255, 255, 255, 0.15);
+  --theme-muted: #fed7aa;
+  --hover-shadow: rgba(67, 20, 7, 0.6);
+}
+
+.theme-day {
+  --card-bg: rgba(2, 132, 199, 0.25);
+  --card-border: rgba(255, 255, 255, 0.3);
+  --theme-muted: #e0f2fe;
+  --hover-shadow: rgba(2, 132, 199, 0.5);
+}
+
+.theme-evening {
+  --card-bg: rgba(59, 7, 100, 0.3);
+  --card-border: rgba(255, 255, 255, 0.15);
+  --theme-muted: #e9d5ff;
+  --hover-shadow: rgba(59, 7, 100, 0.6);
+}
+
+.card,
+.analytics-box,
+.analytics-card,
+.chart-card,
+.log-card {
+  background: var(--card-bg) !important;
+  backdrop-filter: blur(20px) saturate(130%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(130%) !important;
+  border: 1px solid var(--card-border) !important;
+  border-radius: 16px;
+  overflow: hidden !important;
+  will-change: transform, box-shadow;
+  transition: background 1.5s ease-in-out, border-color 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.card:hover,
+.analytics-box:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 30px 50px -12px var(--hover-shadow), 0 0 30px -5px rgba(255, 255, 255, 0.15) !important;
+  z-index: 10;
+}
+
+.card::before,
+.analytics-box::before,
+.top-line {
+  display: none !important;
+}
+
+/* ==========================================================================
+   ⚡ DYNAMIC THEME GLASS — (MODIFIED SECTION TITLES)
+   ========================================================================== */
+
+/* ─── 1. MODIFIED: Section title parent ─── */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 16px !important;
+  /* Let Flexbox handle the gaps naturally */
+  margin: 48px 0 24px 4px !important;
+  color: #ffffff !important;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* ─── 2. NEW: Text Group stays on the left ─── */
+.section-title .title-text-group {
+  order: 1;
+  /* Forces it to be the first element */
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ─── 3. MODIFIED: The Comet Tail becomes a dynamic stretching flex item! ─── */
+.section-title::after {
+  content: '';
+  order: 2;
+  /* Forces the line to sit BETWEEN the text and the button */
+  flex: 1;
+  /* Stretches to fill all remaining empty space dynamically! */
+  height: 2px;
+  background: linear-gradient(90deg, #38bdf8 0%, rgba(56, 189, 248, 0.4) 30%, transparent 100%) !important;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+  opacity: 1 !important;
+
+  /* Reset the old absolute positioning */
+  position: static;
+  transform: none;
+  width: auto;
+}
+
+/* ─── 4. MODIFIED: The Button moves to the far right ─── */
+.section-title .btn {
+  order: 3;
+  /* Forces the button to be the last element */
+  margin-left: 0;
+  /* No longer needed because flex:1 pushes it to the edge */
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   TEXT GLOWS & TRANSITIONS
+   ========================================================================== */
+
+.stat-label,
+.stat-sub,
+.analytics-title,
+.chart-title,
+.log-current,
+.aqi-threshold,
+.footer,
+.log-msg {
+  color: var(--theme-muted) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  transition: color 1.5s ease-in-out;
+}
+
+.stat-val,
+.chart-current {
+  color: #ffffff !important;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  transition: text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover .stat-val {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
+}
+

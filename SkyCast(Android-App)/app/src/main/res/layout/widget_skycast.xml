@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_bg"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="● SkyCast Live"
+        android:textColor="#38bdf8"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="8dp"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Temp" android:textColor="#94a3b8" android:textSize="12sp"/>
+            <TextView android:id="@+id/widgetTemp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textColor="#ffffff" android:textSize="18sp" android:textStyle="bold"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Hum" android:textColor="#94a3b8" android:textSize="12sp"/>
+            <TextView android:id="@+id/widgetHum" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textColor="#ffffff" android:textSize="18sp" android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="AQI" android:textColor="#94a3b8" android:textSize="12sp"/>
+            <TextView android:id="@+id/widgetAqi" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textColor="#fbbf24" android:textSize="18sp" android:textStyle="bold"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rain" android:textColor="#94a3b8" android:textSize="12sp"/>
+            <TextView android:id="@+id/widgetRain" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textColor="#3b82f6" android:textSize="16sp" android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
